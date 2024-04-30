@@ -16,8 +16,6 @@ class MenuText
 private:
 
 public:
-	void static SetEncoding1251();
-	void static SetEncodingUTF_8();
 
 	void static Indents(int);
 
@@ -34,27 +32,28 @@ public:
 	void static AdminChoice();
 
 	void static ViewAuthorChoice();
-	void static AdminArtworksChoice();
-	void static AdminAdvancedArtworkChoice();
-	void static AdminAuthorsChoice();
-	void static AdminMaterialsChoice();
-	void static ChoiceTypeArtworks();
 
-	void static TypeNewValue(int);
-	void static TypeNameForDelete();
+	void static AdminChoiceArtwork();
+	void static AdminChoiceArtworkUpdate();
 
-	void static ShowListOfAdvancedArtworks(const std::vector<AdvancedArtwork> artworks, bool isNeedBackOption);
-	void static ShowListOfArtworks(const std::vector<Artwork> artworks, bool isNeedBackOption);
-	void static ShowListOfAuthors(const std::vector<Author> author, bool isNeedBackOption);
-	void static ShowListOfMaterials(const std::vector<Material> material, bool isNeedBackOption);
-
-	void static ShowFullInfoOfArtwork(const Artwork* artwork, std::vector<Author> authors);
-	void static ShowFullInfoOfAdvancedArtworks(const AdvancedArtwork* artwork, std::vector<Author> authors);
+	void static AdminChoiceAdvancedArtwork();
+	void static AdminChoiceAdvancedArtworkUpdate();
+	
+	void static AdminChoiceAuthor();
+	void static AdminChoiceAuthorUpdate();
+	
+	void static ShowFullInfoOfArtwork(const Artwork* artwork, std::vector<Author> authors, MaterialsEditor editor);
+	void static ShowFullInfoOfAdvancedArtworks(const AdvancedArtwork* artwork, std::vector<Author> authors, MaterialsEditor editor);
 	void static ShowFullInfoOfAuthor(const Author* author);
 
 	void static ShowArtworkMaterials(Artwork art, bool typeInfo, MaterialsEditor editor);
 
 	void static ShowAuthorArtworks(Author author, std::vector<Artwork> arts, std::vector<AdvancedArtwork> advArts);
+
+	void static ShowListOfAdvancedArtworks(const std::vector<AdvancedArtwork> artworks, bool isNeedBackOption);
+	void static ShowListOfArtworks(const std::vector<Artwork> artworks, bool isNeedBackOption);
+	void static ShowListOfAuthors(const std::vector<Author> author, bool isNeedBackOption);
+
 
 	Artwork static CreateArtworkForm(std::vector<Author>, MaterialsEditor editor);
 	AdvancedArtwork static CreateAdvancedArtworkForm(std::vector<Author>, MaterialsEditor editor);

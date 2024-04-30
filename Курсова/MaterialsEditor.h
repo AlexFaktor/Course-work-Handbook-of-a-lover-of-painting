@@ -15,7 +15,7 @@ public:
 
 	int GetFreeId(bool isAdvancedArtwork);
 
-	std::vector<Material> GetById(int id); // Важливо щоб тут були посилання на одні і тіж матеріали
+	std::vector<Material*> GetById(int id, bool isAdvancedArtwork); // Важливо щоб тут були посилання на одні і тіж матеріали
 
 	bool AddMaterial(Material* material, Artwork* art);
 

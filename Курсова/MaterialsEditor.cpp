@@ -59,14 +59,14 @@ int MaterialsEditor::GetFreeId(bool isAdvancedArtwork)
 		return -1;
 }
 
-std::vector<Material> MaterialsEditor::GetById(int id)
+std::vector<Material*> MaterialsEditor::GetById(int id, bool isAdvancedArtwork)
 {
-	std::vector<Material> materials;
+	std::vector<Material*> materials;
 
 	for (int i = 0; i < _materials.size(); i++)
 	{
-		if (_materials[i].Id() == id)
-			materials.push_back(_materials[i]);
+		if (_materials[i].Id() == id && _materials[i].IsAdvancedArtwork() == isAdvancedArtwork)
+			materials.push_back(&_materials[i]);
 	}
 	return materials;
 }

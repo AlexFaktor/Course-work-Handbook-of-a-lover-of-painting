@@ -1,17 +1,5 @@
 #include "MenuText.h"
-
-
-void MenuText::SetEncoding1251()
-{
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
-}
-
-void MenuText::SetEncodingUTF_8()
-{
-	SetConsoleCP(CP_UTF8);
-	SetConsoleOutputCP(CP_UTF8);
-}
+#include <conio.h>
 
 void MenuText::Indents(int count)
 {
@@ -80,7 +68,7 @@ void MenuText::WaitForUser()
 	SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE);
 
 	std::cout << "\nНатистніть клавішу, щоб продовжити..." << std::endl;
-
+	_getch();
 	SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 }
 
@@ -99,7 +87,6 @@ void MenuText::ViewerChoice()
 	std::cout << "1 - Список всіх картин " << std::endl;
 	std::cout << "2 - Список всіх продвинутих картин " << std::endl;
 	std::cout << "3 - Список всіх авторів " << std::endl;
-	std::cout << "4 - Список всіх матерялів" << std::endl;
 	std::cout << "0 - Повернутися до вибору ролі " << std::endl;
 	std::cout << "\n=> ";
 }
@@ -110,7 +97,6 @@ void MenuText::AdminChoice()
 	std::cout << "1 - Картини " << std::endl;
 	std::cout << "2 - Продвинуті картини " << std::endl;
 	std::cout << "3 - Автори " << std::endl;
-	std::cout << "4 - Матеріали " << std::endl;
 	std::cout << "0 - Повернутися до вибору ролі " << std::endl;
 	std::cout << "\n=> ";
 }
@@ -124,86 +110,129 @@ void MenuText::ViewAuthorChoice()
 	std::cout << "\n=> ";
 }
 
-void MenuText::AdminArtworksChoice()
+void MenuText::AdminChoiceArtwork()
 {
-	std::cout << "<Виберіть операцію>\n" << std::endl;
+	std::cout << "<Виберіть операцію з картинами>\n" << std::endl;
 	std::cout << "1 - Додати картину " << std::endl;
 	std::cout << "2 - Оновити картину " << std::endl;
 	std::cout << "3 - Видалити картину " << std::endl;
-	std::cout << "0 - Вихід " << std::endl;
+	std::cout << "0 - Повернутися " << std::endl;
 	std::cout << "\n=> ";
 }
 
-void MenuText::AdminAdvancedArtworkChoice()
+void MenuText::AdminChoiceArtworkUpdate()
 {
-	std::cout << "<Виберіть операцію>\n" << std::endl;
+	std::cout << "\n<Виберіть що оновити картині>\n" << std::endl;
+	std::cout << "1 - Ім'я" << std::endl;
+	std::cout << "2 - Автора" << std::endl;
+	std::cout << "3 - Додати матеріал" << std::endl;
+	std::cout << "4 - Оновити матеріал" << std::endl;
+	std::cout << "5 - Видалити матеріал" << std::endl;
+	std::cout << "6 - Опис" << std::endl;
+	std::cout << "0 - Повернутися" << std::endl;
+	std::cout << "\n=>";
+}
+
+void MenuText::AdminChoiceAdvancedArtwork()
+{
+	std::cout << "<Виберіть операцію з продвинутими картинами>\n" << std::endl;
 	std::cout << "1 - Додати продвинуту картину " << std::endl;
-	std::cout << "1 - Оновити продвинуту картину " << std::endl;
+	std::cout << "2 - Оновити продвинуту картину " << std::endl;
 	std::cout << "3 - Видалити продвинуту картину " << std::endl;
-	std::cout << "0 - Вихід " << std::endl;
+	std::cout << "0 - Повернутися " << std::endl;
 	std::cout << "\n=> ";
 }
 
-void MenuText::AdminAuthorsChoice()
+void MenuText::AdminChoiceAdvancedArtworkUpdate()
 {
-	std::cout << "<Виберіть операцію>\n" << std::endl;
+	std::cout << "\n<Виберіть що оновити продвинутій картині>\n" << std::endl;
+	std::cout << "1 - Ім'я" << std::endl;
+	std::cout << "2 - Автора" << std::endl;
+	std::cout << "3 - Додати матеріал" << std::endl;
+	std::cout << "4 - Оновити матеріал" << std::endl;
+	std::cout << "5 - Видалити матеріал" << std::endl;
+	std::cout << "0 - Повернутися" << std::endl;
+	std::cout << "\n=>" << std::endl;
+}
+
+void MenuText::AdminChoiceAuthor()
+{
+	std::cout << "<Виберіть операцію з авторами>\n" << std::endl;
 	std::cout << "1 - Додати автора " << std::endl;
 	std::cout << "2 - Оновити автора " << std::endl;
 	std::cout << "3 - Видалити автора " << std::endl;
-	std::cout << "0 - Вихід " << std::endl;
+	std::cout << "0 - Повернутися " << std::endl;
 	std::cout << "\n=> ";
 }
 
-void MenuText::AdminMaterialsChoice()
+void MenuText::AdminChoiceAuthorUpdate()
 {
-	std::cout << "<Виберіть операцію>\n" << std::endl;
-	std::cout << "1 - Оновити матеріал " << std::endl;
-	std::cout << "2 - Видалити матеріал " << std::endl;
-	std::cout << "0 - Вихід " << std::endl;
-	std::cout << "\n=> ";
+	std::cout << "\n<Виберіть що оновити автору>\n" << std::endl;
+	std::cout << "1 - Ім'я" << std::endl;
+	std::cout << "2 - Біографія" << std::endl;
+	std::cout << "0 - Повернутися" << std::endl;
+	std::cout << "\n=>" << std::endl;
 }
 
-void MenuText::ChoiceTypeArtworks()
+void MenuText::ShowFullInfoOfArtwork(const Artwork* artwork, std::vector<Author> authors, MaterialsEditor editor)
 {
-	std::cout << "<Виберіть тип картини>\n" << std::endl;
-	std::cout << "1 - Звичайна " << std::endl;
-	std::cout << "2 - Продвинута " << std::endl;
-	std::cout << "0 - Вихід " << std::endl;
-	std::cout << "\n=> ";
+	std::cout << "Назва - " << artwork->Name() << std::endl;
+	std::cout << "Автор - " << GetAuthorBuId(artwork->AuthorId(), authors).Name() << std::endl;
+	std::cout << "Матеріали - "; ShowArtworkMaterials(*artwork, false, editor);
 }
 
-void MenuText::TypeNewValue(int valueCode)
+void MenuText::ShowFullInfoOfAdvancedArtworks(const AdvancedArtwork* artwork, std::vector<Author> authors, MaterialsEditor editor)
 {
-	DataInputCyrillicNotSupported();
-	switch (valueCode)
+	std::cout << "Назва - " << artwork->Name() << std::endl;
+	std::cout << "Автор - " << GetAuthorBuId(artwork->AuthorId(), authors).Name() << std::endl;
+	std::cout << "Опис - " << artwork->Description() << std::endl;
+	std::cout << "Матеріали - "; ShowArtworkMaterials(*artwork, false, editor);
+}
+
+void MenuText::ShowFullInfoOfAuthor(const Author* author)
+{
+	std::cout << "Ім'я - " << author->Name() << std::endl;
+	std::cout << "Біографія - " << author->Description() << std::endl;
+}
+
+void MenuText::ShowArtworkMaterials(Artwork art, bool typeInfo, MaterialsEditor editor)
+{
+	std::vector<Material*> artMat = editor.GetById(art.MaterialsId(), !art.IsArtwork());
+	if (typeInfo == true)
 	{
-	case 1:
-		std::cout << "Напишіть нове ім'я -> ";
-		break;
-	case 2:
-		std::cout << "Напишіть нового автора -> ";
-		break;
-	case 3:
-		std::cout << "Напишіть нову дату написання -> ";
-		break;
-	case 4:
-		std::cout << "Напишіть нову історію -> ";
-		break;
-	case 5:
-		std::cout << "Напишіть нові матеріали -> ";
-		break;
-	case 6:
-		std::cout << "Напишіть нову техніку -> ";
-		break;
-	default:
-		std::cout << "Error, invalid valueCode";
-		break;
+		for (int i = 0; i < artMat.size(); i++)
+		{
+			std::cout << i+1 << ". " << artMat[i]->Name() << std::endl;
+		}
+	}
+	else
+	{
+		for (int i = 0; i < artMat.size(); i++)
+		{
+			std::cout << artMat[i]->Name() << ", ";
+		}
 	}
 }
 
-void MenuText::TypeNameForDelete()
+void MenuText::ShowAuthorArtworks(Author author, std::vector<Artwork> arts, std::vector<AdvancedArtwork> advArts)
 {
-	std::cout << "Напишіть ім'я картини для видалення -> ";
+	std::cout << "Звичайні картини: " << std::endl;
+	for (int i = 0; i < arts.size(); i++)
+	{
+		if (arts[i].AuthorId() == author.Id())
+		{
+			std::cout << arts[i].Name() << std::endl;
+		}
+	}
+	std::cout << "\nПродвинуті картини: " << std::endl;
+	for (int i = 0; i < advArts.size(); i++)
+	{
+		if (advArts[i].AuthorId() == author.Id())
+		{
+			std::cout << advArts[i].Name() << std::endl;
+		}
+	}
+	Indents(1);
 }
 
 void MenuText::ShowListOfAdvancedArtworks(const std::vector<AdvancedArtwork> artworks, bool isNeedBackOption)
@@ -273,90 +302,6 @@ void MenuText::ShowListOfAuthors(const std::vector<Author> author, bool isNeedBa
 		std::cout << "\n0 - Повернутися назад" << std::endl;
 		std::cout << "\n=> ";
 	}
-}
-
-void MenuText::ShowListOfMaterials(const std::vector<Material> material, bool isNeedBackOption)
-{
-	if (material.size() < 1)
-	{
-		std::cout << "Матеріали відсутні." << std::endl;
-	}
-
-	SetConsoleOutputCP(CP_UTF8);
-
-	for (int i = 1; i < material.size() + 1; i++)
-	{
-		std::cout << i << ". " << material[i - 1].Name() << std::endl;
-	}
-
-	SetConsoleOutputCP(1251);
-
-	if (isNeedBackOption)
-	{
-		std::cout << "\n0 - Повернутися назад" << std::endl;
-		std::cout << "\n=> ";
-	}
-}
-
-void MenuText::ShowFullInfoOfArtwork(const Artwork* artwork, std::vector<Author> authors)
-{
-
-	std::cout << "Назва - " << artwork->Name() << std::endl;
-	std::cout << "Автор - " << GetAuthorBuId(artwork->AuthorId(), authors).Name() << std::endl;
-
-}
-
-void MenuText::ShowFullInfoOfAdvancedArtworks(const AdvancedArtwork* artwork, std::vector<Author> authors)
-{
-	std::cout << "Назва - " << artwork->Name() << std::endl;
-	std::cout << "Автор - " << GetAuthorBuId(artwork->AuthorId(), authors).Name() << std::endl;
-	std::cout << "Опис - " << artwork->Description() << std::endl;
-}
-
-void MenuText::ShowFullInfoOfAuthor(const Author* author)
-{
-	std::cout << "Ім'я - " << author->Name() << std::endl;
-	std::cout << "Біографія - " << author->Description() << std::endl;
-}
-
-void MenuText::ShowArtworkMaterials(Artwork art, bool typeInfo, MaterialsEditor editor)
-{
-	std::vector<Material> artMat = editor.GetById(art.MaterialsId());
-	if (typeInfo == true)
-	{
-		for (int i = 0; i < artMat.size(); i++)
-		{
-			std::cout << i << ". " << artMat[i].Name() << std::endl;
-		}
-	}
-	else
-	{
-		for (int i = 0; i < artMat.size(); i++)
-		{
-			std::cout << artMat[i].Name() << ", ";
-		}
-	}
-}
-
-void MenuText::ShowAuthorArtworks(Author author, std::vector<Artwork> arts, std::vector<AdvancedArtwork> advArts)
-{
-	std::cout << "Звичайні картини: " << std::endl;
-	for (int i = 0; i < arts.size(); i++)
-	{
-		if (arts[i].AuthorId() == author.Id())
-		{
-			std::cout << arts[i].Name() << std::endl;
-		}
-	}
-	std::cout << "\nПродвинуті картини: " << std::endl;
-	for (int i = 0; i < advArts.size(); i++)
-	{
-		if (advArts[i].AuthorId() == author.Id())
-		{
-			std::cout << advArts[i].Name() << std::endl;
-		}
-	}
-	Indents(1);
 }
 
 Artwork MenuText::CreateArtworkForm(std::vector<Author> authors, MaterialsEditor editor)
