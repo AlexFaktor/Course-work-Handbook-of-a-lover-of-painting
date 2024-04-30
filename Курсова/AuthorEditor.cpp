@@ -1,0 +1,1 @@
+#include "AuthorEditor.h"

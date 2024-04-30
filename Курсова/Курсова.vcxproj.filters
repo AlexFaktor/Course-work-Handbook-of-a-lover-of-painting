@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\Database">
+      <UniqueIdentifier>{176624e7-94ac-4d38-80be-aae7ea6b22b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Database\Csv">
+      <UniqueIdentifier>{b4a4de2e-0fc9-4e00-97ba-4cc944a45e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Database\Csv\Base">
+      <UniqueIdentifier>{a3d405d1-6ecf-47cf-ace1-a1447ded2671}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Models">
+      <UniqueIdentifier>{976611af-baab-4f26-b27a-8b37f73036b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Service">
+      <UniqueIdentifier>{f9994fae-f0da-439e-9fdc-457e8d410d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Service\Editors">
+      <UniqueIdentifier>{2b374e1e-bc5a-475b-aede-d54120956795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Service\Text">
+      <UniqueIdentifier>{658a6e66-fb98-43bb-881d-1372bb36b691}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Program.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuText.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialsEditor.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="DatabaseObject.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvWriter.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvMaterial.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvAuthor.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvArtwork.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="CsvAdvancedArtwork.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthorEditor.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Author.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="Artwork.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="ArtworkEditor.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvancedArtworkEditor.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+    <ClCompile Include="AdvancedArtwork.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CsvWriter.h">
+      <Filter>Файлы заголовков\Database\Csv\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvAdvancedArtwork.h">
+      <Filter>Файлы заголовков\Database\Csv</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>Файлы заголовков\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvArtwork.h">
+      <Filter>Файлы заголовков\Database\Csv</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvAuthor.h">
+      <Filter>Файлы заголовков\Database\Csv</Filter>
+    </ClInclude>
+    <ClInclude Include="CsvMaterial.h">
+      <Filter>Файлы заголовков\Database\Csv</Filter>
+    </ClInclude>
+    <ClInclude Include="DatabaseObject.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Author.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Artwork.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvancedArtwork.h">
+      <Filter>Файлы заголовков\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="AdvancedArtworkEditor.h">
+      <Filter>Файлы заголовков\Service\Editors</Filter>
+    </ClInclude>
+    <ClInclude Include="ArtworkEditor.h">
+      <Filter>Файлы заголовков\Service\Editors</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorEditor.h">
+      <Filter>Файлы заголовков\Service\Editors</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialsEditor.h">
+      <Filter>Файлы заголовков\Service\Editors</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuText.h">
+      <Filter>Файлы заголовков\Service\Text</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
