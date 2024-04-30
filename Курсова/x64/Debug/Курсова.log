@@ -1,0 +1,19 @@
+﻿  AdvancedArtwork.cpp
+  AdvancedArtworkEditor.cpp
+  Artwork.cpp
+  ArtworkEditor.cpp
+  Author.cpp
+C:\Users\Миша\source\repos\Course-work-Handbook-of-a-lover-of-painting\Курсова\ArtworkEditor.cpp(1,10): error C1083: Не удается открыть файл включение: ArtworksEditor.h: No such file or directory,
+  AuthorEditor.cpp
+  CsvAdvancedArtwork.cpp
+  CsvArtwork.cpp
+  CsvAuthor.cpp
+  CsvMaterial.cpp
+  CsvWriter.cpp
+  Database.cpp
+  DatabaseObject.cpp
+  Material.cpp
+  MaterialsEditor.cpp
+  MenuText.cpp
+  Program.cpp
+  Создание кода...
