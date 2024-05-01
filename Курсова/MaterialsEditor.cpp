@@ -1,5 +1,5 @@
 #include "MaterialsEditor.h"
-#include "AdvancedArtwork.h"
+
 
 
 MaterialsEditor::MaterialsEditor(std::vector<Material>& materials)
@@ -7,7 +7,7 @@ MaterialsEditor::MaterialsEditor(std::vector<Material>& materials)
 {
 }
 
-int MaterialsEditor::GetFreeId(bool isAdvancedArtwork)
+int MaterialsEditor::GetMaterialFreeId(bool isAdvancedArtwork, std::vector<Artwork> artworks, std::vector<AdvancedArtwork> advanceds)
 {
 	if (isAdvancedArtwork)
 	{
@@ -17,7 +17,7 @@ int MaterialsEditor::GetFreeId(bool isAdvancedArtwork)
 			bool isThisIdBusy = false;
 			for (int i = 0; i < _materials.size(); i++)
 			{
-				if (_materials[i].Id() == freeId && _materials[i].IsAdvancedArtwork() == isAdvancedArtwork)
+				if (advanceds[i].Id() == freeId)
 				{
 					isThisIdBusy = true;
 				}
@@ -40,7 +40,7 @@ int MaterialsEditor::GetFreeId(bool isAdvancedArtwork)
 			bool isThisIdBusy = false;
 			for (int i = 0; i < _materials.size(); i++)
 			{
-				if (_materials[i].Id() == freeId && _materials[i].IsAdvancedArtwork() == !isAdvancedArtwork)
+				if (artworks[i].Id() == freeId)
 				{
 					isThisIdBusy = true;
 				}
@@ -77,7 +77,7 @@ bool MaterialsEditor::AddMaterial(Material* material, Artwork* art)
 		material->IsAdvancedArtwork(false);
 	else if (art->IsArtwork() == false)
 		material->IsAdvancedArtwork(true);
-	material->Id(art->MaterialsId());
+	material->Id(art->Id());
 
 	_materials.push_back(*material);
 	return true;

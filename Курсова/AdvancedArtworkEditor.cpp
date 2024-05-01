@@ -46,7 +46,6 @@ bool AdvancedArtworkEditor::UpdateFullArtwork(AdvancedArtwork* artwork)
 		{
 			_advancedArtworks[i].Name(artwork->Name());
 			_advancedArtworks[i].AuthorId(artwork->AuthorId());
-			_advancedArtworks[i].MaterialsId(artwork->MaterialsId());
 			_advancedArtworks[i].Description(artwork->Description());
 			return true;
 		}

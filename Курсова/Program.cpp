@@ -293,7 +293,7 @@ public:
     void OperaionAddArtwork()
     {
         system("cls");
-        Artwork art = MenuText::CreateArtworkForm(_authors, *_editorMaterials);
+        Artwork art = MenuText::CreateArtworkForm(_authors, *_editorMaterials, _advancedArtworks, _artworks);
         _editorArtworks->AddArtwork(&art);
         _database->Save(_artworks);
         MenuText::TheOperationIsSuccessful();
@@ -393,7 +393,7 @@ public:
             else if (choice == "4")
             {
                 system("cls");
-                std::vector<Material*> artMaterials = _editorMaterials->GetById(_artworks[index].MaterialsId(), !_artworks[index].IsArtwork());
+                std::vector<Material*> artMaterials = _editorMaterials->GetById(_artworks[index].Id(), !_artworks[index].IsArtwork());
                 MenuText::ShowArtworkMaterials(_artworks[index], true, *_editorMaterials);
                 int indexMater; std::cin >> indexMater; std::cin.ignore();
                 if (indexMater == 0)
@@ -420,7 +420,7 @@ public:
             else if (choice == "5")
             {
                 system("cls");
-                std::vector<Material*> artMaterials = _editorMaterials->GetById(_artworks[index].MaterialsId(), !_artworks[index].IsArtwork());
+                std::vector<Material*> artMaterials = _editorMaterials->GetById(_artworks[index].Id(), !_artworks[index].IsArtwork());
                 MenuText::ShowArtworkMaterials(_artworks[index], true, *_editorMaterials);
                 int indexMater; std::cin >> indexMater;
                 if (indexMater == 0)
@@ -516,7 +516,7 @@ public:
     void OperaionAddAdvancedArtwork()
     {
         system("cls");
-        AdvancedArtwork art = MenuText::CreateAdvancedArtworkForm(_authors, *_editorMaterials);
+        AdvancedArtwork art = MenuText::CreateAdvancedArtworkForm(_authors, *_editorMaterials, _advancedArtworks, _artworks);
         _editorAdvancedArtworks->AddArtwork(&art);
         _database->Save(_advancedArtworks);
         MenuText::TheOperationIsSuccessful();
@@ -616,7 +616,7 @@ public:
             else if (choice == "4")
             {
                 system("cls");
-                std::vector<Material*> artMaterials = _editorMaterials->GetById(_advancedArtworks[index].MaterialsId(), !_advancedArtworks[index].IsArtwork());
+                std::vector<Material*> artMaterials = _editorMaterials->GetById(_advancedArtworks[index].Id(), !_advancedArtworks[index].IsArtwork());
                 MenuText::ShowArtworkMaterials(_advancedArtworks[index], true, *_editorMaterials);
                 int indexMater; std::cin >> indexMater; std::cin.ignore();
                 if (indexMater == 0)
@@ -643,7 +643,7 @@ public:
             else if (choice == "5")
             {
                 system("cls");
-                std::vector<Material*> artMaterials = _editorMaterials->GetById(_advancedArtworks[index].MaterialsId(), !_advancedArtworks[index].IsArtwork());
+                std::vector<Material*> artMaterials = _editorMaterials->GetById(_advancedArtworks[index].Id(), !_advancedArtworks[index].IsArtwork());
                 MenuText::ShowArtworkMaterials(_advancedArtworks[index], true, *_editorMaterials);
                 int indexMater; std::cin >> indexMater;
                 if (indexMater == 0)

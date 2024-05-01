@@ -1,6 +1,7 @@
 #include "ArtworkEditor.h"
 #include <algorithm>
 
+
 ArtworkEditor::ArtworkEditor(std::vector<Artwork>& artworks)
 	: _artworks(artworks)
 {
@@ -45,7 +46,6 @@ bool ArtworkEditor::UpdateFullArtwork(Artwork* artwork)
 		{
 			_artworks[i].Name(artwork->Name());
 			_artworks[i].AuthorId(artwork->AuthorId());
-			_artworks[i].MaterialsId(artwork->MaterialsId());
 			return true;
 		}
 	}

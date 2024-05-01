@@ -41,9 +41,6 @@ std::vector<AdvancedArtwork> CsvAdvancedArtwork::ReadData()
                     artwork.AuthorId(std::stoi(field));
                     break;
                 case 3:
-                    artwork.MaterialsId(std::stoi(field));
-                    break;
-                case 4:
                     artwork.Description(field);
                     break;
                 default:
@@ -75,11 +72,11 @@ void CsvAdvancedArtwork::WriteData(const std::vector<AdvancedArtwork>& artworks)
     if (csvFile.is_open())
     {
         // Записуємо заголовок таблиці
-        csvFile << "Id|Name|AuthorId|MaterialsId|Decs\n";
+        csvFile << "Id|Name|AuthorId|Decs\n";
 
         for (AdvancedArtwork art : artworks)
         {
-            csvFile << art.Id() << "|" << art.Name() << "|" << art.AuthorId() << "|" << art.MaterialsId() << "|" << art.Description() << "\n";
+            csvFile << art.Id() << "|" << art.Name() << "|" << art.AuthorId() << "|" << art.Description() << "\n";
         }
 
         csvFile.close();

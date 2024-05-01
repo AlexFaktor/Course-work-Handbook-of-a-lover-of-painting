@@ -13,8 +13,3 @@ void Artwork::AuthorId(int authorId)
 {
 	_authorId = authorId;
 }
-
-void Artwork::MaterialsId(int materialsId)
-{
-	_materialsId = materialsId;
-}

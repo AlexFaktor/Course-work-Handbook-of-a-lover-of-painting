@@ -40,9 +40,6 @@ std::vector<Artwork> CsvArtwork::ReadData()
                 case 2:
                     artwork.AuthorId(std::stoi(field));
                     break;
-                case 3:
-                    artwork.MaterialsId(std::stoi(field));
-                    break;
                 default:
                     // Обробка помилки, якщо поле не розпізнано
                     std::cerr << "Unknown field: " << field << std::endl;
@@ -72,11 +69,11 @@ void CsvArtwork::WriteData(const std::vector<Artwork>& artworks)
     if (csvFile.is_open())
     {
         // Записуємо заголовок таблиці
-        csvFile << "Id|Name|AuthorId|MaterialsId\n";
+        csvFile << "Id|Name|AuthorId\n";
 
         for (const Artwork& art : artworks)
         {
-            csvFile << art.Id() << "|" << art.Name() << "|" << art.AuthorId() << "|" << art.MaterialsId() << "\n";
+            csvFile << art.Id() << "|" << art.Name() << "|" << art.AuthorId() << "\n";
         }
 
         csvFile.close();

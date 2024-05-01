@@ -4,6 +4,8 @@
 
 #include <vector>
 #include <string>
+#include "MaterialsEditor.h"
+#include "AdvancedArtwork.h"
 
 class ArtworkEditor
 {

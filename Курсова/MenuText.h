@@ -55,8 +55,8 @@ public:
 	void static ShowListOfAuthors(const std::vector<Author> author, bool isNeedBackOption);
 
 
-	Artwork static CreateArtworkForm(std::vector<Author>, MaterialsEditor editor);
-	AdvancedArtwork static CreateAdvancedArtworkForm(std::vector<Author>, MaterialsEditor editor);
+	Artwork static CreateArtworkForm(std::vector<Author>, MaterialsEditor editor, std::vector<AdvancedArtwork> advanceds, std::vector<Artwork> artworks);
+	AdvancedArtwork static CreateAdvancedArtworkForm(std::vector<Author>, MaterialsEditor editor, std::vector<AdvancedArtwork> advanceds, std::vector<Artwork> artworks);
 	Author static CreateAuthorForm();
 
 	Author static GetAuthorBuId(int id, std::vector<Author> authors);

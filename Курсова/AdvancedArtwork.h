@@ -9,7 +9,6 @@ private:
 	std::string _description;
 
 public:
-
 	const std::string& Description() const { return _description; }
 
 	void Description(const std::string& description);

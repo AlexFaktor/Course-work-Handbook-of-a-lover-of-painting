@@ -197,13 +197,14 @@ void MenuText::ShowFullInfoOfAuthor(const Author* author)
 
 void MenuText::ShowArtworkMaterials(Artwork art, bool typeInfo, MaterialsEditor editor)
 {
-	std::vector<Material*> artMat = editor.GetById(art.MaterialsId(), !art.IsArtwork());
+	std::vector<Material*> artMat = editor.GetById(art.Id(), !art.IsArtwork());
 	if (typeInfo == true)
 	{
 		for (int i = 0; i < artMat.size(); i++)
 		{
 			std::cout << i+1 << ". " << artMat[i]->Name() << std::endl;
 		}
+		std::cout << "0 - Повернутися\n\n=>";
 	}
 	else
 	{
@@ -304,7 +305,7 @@ void MenuText::ShowListOfAuthors(const std::vector<Author> author, bool isNeedBa
 	}
 }
 
-Artwork MenuText::CreateArtworkForm(std::vector<Author> authors, MaterialsEditor editor)
+Artwork MenuText::CreateArtworkForm(std::vector<Author> authors, MaterialsEditor editor, std::vector<AdvancedArtwork> advanceds, std::vector<Artwork> artworks)
 {
 	Artwork* art = new Artwork();
 
@@ -336,12 +337,10 @@ Artwork MenuText::CreateArtworkForm(std::vector<Author> authors, MaterialsEditor
 
 	art->Name(name);
 
-	art->MaterialsId(editor.GetFreeId(false));
-
 	return *art;
 }
 
-AdvancedArtwork MenuText::CreateAdvancedArtworkForm(std::vector<Author> authors, MaterialsEditor editor)
+AdvancedArtwork MenuText::CreateAdvancedArtworkForm(std::vector<Author> authors, MaterialsEditor editor, std::vector<AdvancedArtwork> advanceds, std::vector<Artwork> artworks)
 {
 	AdvancedArtwork* art = new AdvancedArtwork();
 
@@ -376,8 +375,6 @@ AdvancedArtwork MenuText::CreateAdvancedArtworkForm(std::vector<Author> authors,
 
 	art->Name(name);
 	art->Description(desc);
-
-	art->MaterialsId(editor.GetFreeId(true));
 
 	return *art;
 }

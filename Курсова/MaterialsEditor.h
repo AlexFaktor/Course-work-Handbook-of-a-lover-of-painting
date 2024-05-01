@@ -2,6 +2,7 @@
 
 #include "Material.h"
 #include "Artwork.h"
+#include "AdvancedArtwork.h"
 
 #include <vector>
 #include <string>
@@ -13,7 +14,7 @@ private:
 public:
 	MaterialsEditor(std::vector<Material>& materials);
 
-	int GetFreeId(bool isAdvancedArtwork);
+	int GetMaterialFreeId(bool isAdvancedArtwork, std::vector<Artwork> artworks, std::vector<AdvancedArtwork> advanceds);
 
 	std::vector<Material*> GetById(int id, bool isAdvancedArtwork); // Важливо щоб тут були посилання на одні і тіж матеріали
 
