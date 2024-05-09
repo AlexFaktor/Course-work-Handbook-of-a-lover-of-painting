@@ -62,9 +62,9 @@ public:
 
     void ChoiceRole()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::RoleChoice();
             std::string choice; std::getline(std::cin, choice);
             if (choice == "0")
@@ -89,13 +89,14 @@ public:
 
     void Viewer()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ViewerChoice();
             std::string choice; std::getline(std::cin, choice);
             if (choice == "0")
             {
+                system("cls");
                 break;
             }
             else if (choice == "1")
@@ -120,9 +121,10 @@ public:
 
     void ListArtwork()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
+            
             MenuText::ShowListOfArtworks(_artworks, true);
             int index; std::cin >> index;
             std::cin.ignore();
@@ -230,13 +232,14 @@ public:
 
     void Admin()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::AdminChoice();
             std::string choice; std::getline(std::cin, choice);
             if (choice == "0")
             {
+                system("cls");
                 break;
             }
             else if (choice == "1")
@@ -261,13 +264,14 @@ public:
 
     void MenuArtwork()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::AdminChoiceArtwork();
             std::string choice; std::getline(std::cin, choice);
             if (choice == "0")
             {
+                system("cls");
                 break;
             }
             else if (choice == "1")
@@ -302,9 +306,9 @@ public:
 
     void MenuUpdateArtwork()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ShowListOfArtworks(_artworks, true);
             int index; std::cin >> index;
             if (index == 0)
@@ -326,9 +330,9 @@ public:
 
     void MenuUpdateArtworkChoice(int index)
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ShowFullInfoOfArtwork(&_artworks[index], _authors, *_editorMaterials);
             MenuText::AdminChoiceArtworkUpdate();
             std::string choice; std::getline(std::cin, choice);
@@ -484,13 +488,14 @@ public:
 
     void MenuAdvancedArtwork()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::AdminChoiceAdvancedArtwork();
             std::string choice; std::getline(std::cin, choice);
             if (choice == "0")
             {
+                system("cls");
                 break;
             }
             else if (choice == "1")
@@ -525,9 +530,9 @@ public:
 
     void MenuUpdateAdvancedArtwork()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ShowListOfAdvancedArtworks(_advancedArtworks, true);
             int index; std::cin >> index;
             if (index == 0)
@@ -549,9 +554,9 @@ public:
 
     void MenuUpdateAdvancedArtworkChoice(int index)
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ShowFullInfoOfAdvancedArtworks(&_advancedArtworks[index], _authors, *_editorMaterials);
             MenuText::AdminChoiceAdvancedArtworkUpdate();
             std::string choice; std::getline(std::cin, choice);
@@ -718,13 +723,14 @@ public:
 
     void MenuAuthor()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::AdminChoiceAuthor();
             std::string choice; std::getline(std::cin, choice);
             if (choice == "0")
             {
+                system("cls");
                 break;
             }
             else if (choice == "1")
@@ -759,9 +765,9 @@ public:
 
     void MenuUpdateAuthor()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ShowListOfAuthors(_authors, true);
             int index; std::cin >> index;
             if (index == 0)
@@ -783,9 +789,10 @@ public:
 
     void MenuUpdateAuthorChoice(int index)
     {
+        system("cls");
         while (true)
         {
-            system("cls");
+            
             MenuText::ShowFullInfoOfAuthor(&_authors[index]);
             MenuText::AdminChoiceAuthorUpdate();
             std::string choice; std::getline(std::cin, choice);
@@ -824,9 +831,9 @@ public:
 
     void OperaionDeleteAuthor()
     {
+        system("cls");
         while (true)
         {
-            system("cls");
             MenuText::ShowListOfAuthors(_authors, true);
             int index; std::cin >> index;
             std::cin.ignore();

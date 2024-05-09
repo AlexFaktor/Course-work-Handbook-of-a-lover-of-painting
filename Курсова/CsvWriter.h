@@ -16,4 +16,4 @@ public:
 	CsvWriter(std::string filePath);
 
 	std::string GetPath();
-};
+};	
