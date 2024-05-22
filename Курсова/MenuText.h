@@ -13,8 +13,6 @@
 
 class MenuText
 {
-private:
-
 public:
 
 	void static Indents(int);
